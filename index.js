@@ -129,4 +129,14 @@ const [, [, , [, favoriteCourse]]] = arr3;
 
 console.log(favoriteCourse); //Python
 
+// Destructing Arrays with default values
 // -----------------------------------------------
+
+//When you try to extract value that doesn’t exist in an array it the value you will get is 'undefined'.
+//You can provide default value for the variables that you want to assign with destructuring.
+
+let users = ['Tony', 'Gary'];
+
+let [user1, user2, user3 = 'Administrator'] = users;
+
+console.log(user3); //Administrator
