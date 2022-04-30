@@ -93,6 +93,7 @@ console.log(otherName); //[]
 
 //Swapping Values
 // -----------------------------------------------
+
 let a = 'I am B.';
 let b = 'I am A.';
 
@@ -116,6 +117,16 @@ const courses = ['HTML', 'CSS', 'JavaScript'];
 
 console.log(courses); //["JavaScript", "HTML", "CSS"]
 
+// Destructuring Nested Arrays
 // -----------------------------------------------
+
+// destructuring to get some value from nested array, you have to follow the structure of the original array.
+
+const arr3 = ['HTML', ['CSS', 'TailWind', ['JavaScript', 'Python']]];
+
+//Ignore the array items that you don't need
+const [, [, , [, favoriteCourse]]] = arr3;
+
+console.log(favoriteCourse); //Python
 
 // -----------------------------------------------
