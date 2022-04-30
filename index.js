@@ -50,3 +50,43 @@ console.log(friend2); //Victoria
 
 console.log(friend3); //undefined -- ?
 console.log(friend4); //undefined -- ?
+
+// Skipping values in arrays
+// -----------------------------------------------
+
+//you can assign only some values from an array and skip those you don’t care about. You can do this by leaving the place for variable name in a specific position empty.
+const myCourses = ['HTML', 'CSS', 'Python', 'Perl', 'C++'];
+
+//Assigning first, third and fifth items of an array
+const [course1, , course3, , course5] = myCourses;
+
+console.log(course1); //HTML
+// console.log(course2); //Error: course2 is not defined
+console.log(course3); //Python
+console.log(course5); //C++
+
+//Assigning second and fourth items of an array
+const [, course2, , course4] = myCourses;
+
+console.log(course2); //CSS
+console.log(course4); //Perl
+
+//Arrays, destructuring and rest operator
+// -----------------------------------------------
+
+//Destructuring with arrays using rest operator we assign individual items to some variables and assign any remaining items to another variable.
+
+const [beginnerCourse1, beginnerCourse2, ...advancedCourses] = myCourses;
+
+console.log(beginnerCourse1); //HTML
+console.log(beginnerCourse2); //CSS
+console.log(advancedCourses); //["Python", "Perl", "C++"]
+
+// const [...beginnerCourses, lastCourse] = myCourses;
+//Error: Rest element must be last element
+
+// -----------------------------------------------
+
+// -----------------------------------------------
+
+// -----------------------------------------------
