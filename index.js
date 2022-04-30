@@ -85,7 +85,36 @@ console.log(advancedCourses); //["Python", "Perl", "C++"]
 // const [...beginnerCourses, lastCourse] = myCourses;
 //Error: Rest element must be last element
 
+//Rest operator for empty remaining values
+const fullName = ['Joe', 'Biden'];
+
+const [firstName, lastName, ...otherName] = fullName;
+console.log(otherName); //[]
+
+//Swapping Values
 // -----------------------------------------------
+let a = 'I am B.';
+let b = 'I am A.';
+
+//Traditional way of swapping values;
+let c = a;
+a = b;
+b = c;
+console.log('a: ', a); //a: I am A.
+console.log('b: ', b); //b: I am B.
+
+//Destructuring to swapping values
+[a, b] = [b, a];
+
+console.log('a: ', a); //a: I am B.
+console.log('b: ', b); //b: I am A.
+
+// Swapping values quickly in an array itself by destructuring
+const courses = ['HTML', 'CSS', 'JavaScript'];
+
+[courses[0], courses[1], courses[2]] = [courses[2], courses[0], courses[1]];
+
+console.log(courses); //["JavaScript", "HTML", "CSS"]
 
 // -----------------------------------------------
 
