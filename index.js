@@ -168,3 +168,82 @@ console.log(name); //Stuart
 //accessing non-existing property 'grade'
 console.log(grade); //undefined -->variable assigned to non-existing property
 
+// destructuring to assign values from objects that have not been declared.
+const { firstname, lastname } = {
+  firstname: 'Terry',
+  lastName: 'George',
+  age: 23,
+};
+
+console.log(firstname); //Terry
+console.log(lastname); //undefined --? mismatch of variable name and property name;
+
+//Destructing and already declared variables
+// *****************************************
+
+// 'Arrays' allow you to declare empty variables first and use destructuring to assign them values later.
+
+const arr4 = ['Nepal', 'USA'];
+
+//Declare empty variables
+let country1, country2;
+
+//assign already declared variables
+[country1, country2] = arr4;
+
+console.log(country1); //Nepal
+console.log(country2); //USA
+
+// You can do the same also with 'objects'. However, there is catch. You have to wrap the whole assignment with parentheses (()). Otherwise, JavaScript will think that the {} is a block.
+
+const myObj1 = {
+  country: 'Nepal',
+  language: 'Nepali',
+};
+
+//Declare empty variables
+let country, language;
+
+//This does NOT work
+// { country, language} = myObj1;
+//Error in index.js (207:22) Declaration or statement expected.
+
+//Instead, this will work
+({ country, language } = myObj1);
+
+console.log(country); //Nepal
+console.log(language); //Nepali
+
+//Changing variable names
+// ********************************************
+
+const book = {
+  title: 'Percy Jackson',
+  author: 'Rick Riordon',
+  year: 2005,
+  publisher: 'Disney',
+};
+
+// Destructing to extract values of 'title', 'author' and assign 'title' to 'bookTitle' and 'author' to 'writer';
+
+const { title: bookTitle, author: writer, publisher } = book;
+
+// console.log(title); //Error: title is not defined
+console.log(bookTitle); //Percy Jackson
+console.log(writer); //Rick Riordon
+console.log(publisher); //Disney;
+
+// Objects, destructuring and default values
+// ************************************************ */
+
+const car = {
+  make: 'Nissan',
+  model: 'Rogue Sport',
+  year: 2022,
+};
+
+// Destructing to extract values of 'make' and 'color' if 'color' doesn't exist, use 'red' as a fallback
+const { make, model, color = 'red' } = car;
+
+console.log(`I love ${make} ${model}.`); //I love Nissan Rogue Sport.
+console.log(`${color} is my favorite color.`); //red is my favorite color.
