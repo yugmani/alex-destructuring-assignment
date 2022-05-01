@@ -140,3 +140,31 @@ let users = ['Tony', 'Gary'];
 let [user1, user2, user3 = 'Administrator'] = users;
 
 console.log(user3); //Administrator
+
+// --------------------------------------------------------
+// ****************** Destructing Objects *****************
+// --------------------------------------------------------
+
+const myUser = {
+  name: 'Stuart',
+  age: 37,
+  sex: 'male',
+};
+
+// Traditional ways to access property values of an object
+const userSex = myUser.sex;
+const userName = myUser.name;
+
+console.log(userName); //Stuart
+console.log(userSex); //male
+
+// Destructing method in an object
+const { age, name, grade } = myUser;
+
+//accessing existing properties of an object
+console.log(age); //37
+console.log(name); //Stuart
+
+//accessing non-existing property 'grade'
+console.log(grade); //undefined -->variable assigned to non-existing property
+
