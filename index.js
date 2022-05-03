@@ -247,3 +247,64 @@ const { make, model, color = 'red' } = car;
 
 console.log(`I love ${make} ${model}.`); //I love Nissan Rogue Sport.
 console.log(`${color} is my favorite color.`); //red is my favorite color.
+
+//Computed property names
+// **************************************************
+
+// You can define property which value you want extract using computed property name.
+// For example, you can use value of a variable to specify property you are looking for.
+// When you want to use computed property name you have to wrap it with square brackets.
+// When you use computed property name you also have to specify a variable name.
+// First, you use the computed property in square brackets.
+// After that, you add colons and specify the variable name.
+// Later, you can use the variable name to access the extracted value.
+
+// Task
+// -----------------------------------------------
+// Declare variable and assign it a property name
+// This variable will be later used to extract the value of an object property that matches the value assigned to this variable, that is 'nationality' property
+
+const myProp = 'nationality';
+
+// Create a new object
+const tourist = {
+  name: 'Cinthya',
+  nationality: 'Canada',
+};
+
+// Use computed property name to extract value of 'nationality' property
+// Then, assign the extracted value to new variable 'state'
+const { [myProp]: state } = tourist;
+
+console.log(state); //Canada
+
+// Destructing Nested Objects
+// ****************************************************
+
+// Like with arrays, if you want to destructre the nested objects and want to extract data from nested objects you have to follow the structure of the original object.
+
+const employee = {
+  name: 'Aden',
+  address: {
+    state: 'California',
+    city: 'Los Angeles',
+    county: 'Hollywood',
+  },
+  employment: {
+    job: 'manager',
+    title: 'CTO',
+  },
+};
+
+// Use destructuring to extract 'name', 'state' from 'address' object and 'title' from 'employment' object
+//You can also change variable names when you extract data from nested objects.
+const {
+  name: employeeName,
+  address: { state: place, city },
+  employment: { title },
+} = employee;
+
+console.log(employeeName); //Aden
+console.log(place); //California
+console.log(city); //Los Angeles
+console.log(title); //CTO
